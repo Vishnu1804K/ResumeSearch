@@ -1,0 +1,113 @@
+.resumeContainer {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .partition {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+  }
+  
+  .headerSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .nameSection {
+    flex: 1;
+  }
+  
+  .fullName {
+    margin: 0;
+  }
+  
+  .contactSection {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .contactInfo {
+    margin: 0;
+  }
+  
+  .contactLink {
+    text-decoration: none;
+    color: #1890ff;
+  }
+  
+  .address {
+    margin-bottom: 20px;
+  }
+  
+  .sectionDivider {
+    margin: 20px 0;
+  }
+  
+  .leftSection {
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+    margin: 4px;
+  }
+  .rightSection
+  {
+    flex: 3;
+  }
+  
+  .skillsSection,
+  .achievementsSection,
+  .educationSection {
+    margin-bottom: 20px;
+  }
+  
+  .sectionTitle {
+    margin-bottom: 10px;
+  }
+  
+  .skillsList,
+  .achievementItem,
+  .educationItem {
+    margin-bottom: 10px;
+  }
+  
+  .projectItem,
+  .experienceItem {
+    margin-bottom: 20px;
+  }
+  
+  .skillItem,
+  .achievementTitle,
+  .educationYear {
+    margin: 0;
+  }
+  
+  .projectTitle,
+  .experienceCompany,
+  .experiencePosition {
+    margin: 0;
+  }
+  
+  .projectLink {
+    text-decoration: none;
+    color: #1890ff;
+  }
+  
+  .projectDescription,
+  .achievementDescription,
+  .educationDetails,
+  .experienceDescription {
+    margin: 0;
+  }
+  
+  .skillItem
+  {
+    margin: 2px;
+  }

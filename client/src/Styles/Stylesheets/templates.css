@@ -1,0 +1,128 @@
+.custom-card {
+  height: 100%; 
+  transition: background-color 0.3s ease; 
+}
+
+.custom-card:hover {
+  background-color: rgba(0, 0, 0, 0.5); 
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%; 
+}
+
+.TemplateName {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.resumeContainer {
+    box-shadow: 0px 0px 4px;
+    padding: 20px;
+}
+  
+  .headerSection {
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .contactSection {
+    display: flex; 
+  }
+  
+  .contactInfo {
+    margin-right: 20px; 
+  }
+  .contactLink {
+    margin-right: 20px; 
+  }
+  .sectionTitle {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .experienceItem {
+    margin-bottom: 20px;
+  }
+  
+  .experienceCompany {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .experiencePosition {
+    font-size: 18px;
+  }
+  
+  .experienceDate {
+    font-size: 16px;
+    margin-top: 5px;
+  }
+  
+  .experienceDescription {
+    margin-top: 5px;
+  }
+
+.experienceSection {
+    margin-bottom: 0; 
+  }
+  
+  .experienceItem {
+    margin-bottom: 0; 
+  }
+  
+  .experienceCompany,
+  .experiencePosition,
+  .experienceDate {
+    margin-bottom: 0; 
+  }
+  .projectSection {
+    margin-top: 20px; 
+  }
+  
+  .projectItem {
+    margin-bottom: 20px; 
+  }
+  
+  .projectTitle {
+    font-size: 20px; 
+    font-weight: bold; 
+  }
+  
+  .projectDescription {
+    margin-top: 5px; 
+  }
+  .DetailsSection {
+    display: flex; 
+  }
+  
+  .FirstHalf {
+    flex: 0 0 70%; 
+  }
+  
+  .SecondHalf {
+    flex: 0 0 30%; 
+  }
+  .skillsList {
+    display: flex;
+    flex-wrap: wrap; 
+  }
+  
+  .skillItem {
+    margin-right: 10px; 
+    margin-bottom: 10px; 
+    background-color:#3498DC;
+    color: azure;
+    font-weight: 400;
+    padding: 5px;
+    border-radius: 2px;
+  }
+  .percentage {
+    color: #3498DC;
+  }
+  
