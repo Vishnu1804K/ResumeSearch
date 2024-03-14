@@ -70,7 +70,7 @@ app.post("/register", async (req, res) => {
       const result = await User.findOne({
         username: req.body.username,
       });
-
+      console.log(req.body.password === req.body.confirmPassword);
       if (result) {
         res.status(400).json("Registration failed");
       } else {
@@ -81,7 +81,7 @@ app.post("/register", async (req, res) => {
           const newUser = new User(req.body);
           await newUser.save();
 
-          res.send("Registration Successful");
+          res.json("Registration Successful");
         } else {
           res.status(400).json("Passwords do not match");
         }
@@ -99,7 +99,7 @@ app.post("/update", async (req, res) => {
   try {
     await User.findOneAndUpdate({ _id: req.body._id }, req.body);
     const user = await User.findOne({ _id: req.body._id });
-    res.send(user);
+    res.json(user);
   } catch (error) {
     res.status(400).json(error);
   }

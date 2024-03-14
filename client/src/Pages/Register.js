@@ -3,7 +3,6 @@ import { Form, Input, Button, message} from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import CachedIcon from '@mui/icons-material/Cached';
-import { EyeInvisibleOutlined, EyeOutlined } from "@ant-design/icons";
 import "../Styles/Stylesheets/authentication.css";
 
 function Register() {
@@ -11,19 +10,18 @@ function Register() {
   const [captchaValue, setCaptchaValue] = useState("");
   const [captchaInput, setCaptchaInput] = useState("");
   const navigate = useNavigate();
-  const [showPassword, setShowPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const onFinish = async (values) => {
-
     try {
-      await axios.post("api/user/register", { ...values, captchaInput });
-      message.success("Registration successfull");
+      console.log(values);
+      const user = await axios.post("api/user/register", { ...values, captchaInput }); 
+      console.log(user);
+      message.success("Registration successful");
     } catch (error) {
+      console.log(error);
       message.error("Registration failed");
-    } finally {
-      form.resetFields();
-    }
+    } 
   };
+  
   const captchahandler = async () => {
     const response = await axios.get("/api/user/captcha");
     setCaptchaValue(response.data);
@@ -65,24 +63,12 @@ function Register() {
         >
           <Input />
         </Form.Item>
-        <Form.Item
-          name="password"
-          label="Password"
-        >
-          {!showPassword?<Input type="password" />:<Input type="text" />}
-          {!showPassword?<EyeOutlined className="passwordToggle" onClick={()=>setShowPassword(!showPassword)} size={18}/>:
-          <EyeInvisibleOutlined className="passwordToggle"  onClick={()=>setShowPassword(!showPassword)}  size={18}/>}
+        <Form.Item name="password" label="Password" rules={[{ required: true, message: 'Please enter your password' }]}>
+            <Input.Password />
         </Form.Item>
-
-        <Form.Item
-          name="confirmPassword"
-          label="Confirm Password"
-        >
-          {!showConfirmPassword?<Input type="password" />:<Input type="text" />}
-          {!showConfirmPassword?<EyeOutlined className="passwordToggle" onClick={()=>setShowConfirmPassword(!showConfirmPassword)} size={18}/>:
-          <EyeInvisibleOutlined className="passwordToggle"  onClick={()=>setShowConfirmPassword(!showConfirmPassword)}  size={18}/>}
+        <Form.Item name="confirmPassword" label="Confirm Password" rules={[{ required: true, message: 'Please enter your password' }]}>
+            <Input.Password />
         </Form.Item>
-
         <Form.Item label="Enter CAPTCHA">
           <div className="captcha-container">
             <Input
@@ -107,6 +93,7 @@ function Register() {
 
         <div className="ButtonContainer">
           <Button
+          type="primary"
             htmlType="submit"
           >
             Register
