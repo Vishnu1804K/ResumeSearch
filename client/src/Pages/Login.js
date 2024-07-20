@@ -13,7 +13,7 @@ function Login() {
   const onFinish = async (values) => {
     try {
       console.log(values);
-      const user = await axios.post("/api/user/login", { ...values, captchaInput });
+      const user = await axios.post("https://resumesearchmain.onrender.com/api/user/login", { ...values, captchaInput });
       message.success("Login successful");
       localStorage.setItem("ResumeUser", JSON.stringify(user.data));
       navigate("/home");
@@ -25,7 +25,7 @@ function Login() {
 
   const fetchCaptcha = async () => {
     try {
-      const response = await axios.get("/api/user/captcha");
+      const response = await axios.get("https://resumesearchmain.onrender.com/api/user/captcha");
       setCaptchaValue(response.data);
     } catch (error) {
       console.error("Failed to fetch CAPTCHA", error);
