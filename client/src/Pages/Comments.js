@@ -24,7 +24,7 @@ const Comments = () => {
 
   const fetchComments = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/comments/${id}`);
+      const response = await axios.get(`https://resumesearchmain.onrender.com/api/comments/${id}`);
       const commentsWithTime = response.data.map(comment => ({
         ...comment,
         formattedTime: moment(comment.timestamp).format('MMM DD, YYYY h:mm A'),
@@ -46,7 +46,7 @@ const Comments = () => {
     }
 
     try {
-      await axios.post(`http://localhost:5000/api/comments/${id}`, {
+      await axios.post(`https://resumesearchmain.onrender.com/api/comments/${id}`, {
         username,
         comment,
       });
@@ -58,7 +58,7 @@ const Comments = () => {
 
   const fetchUser = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/comments/user/${id}`);
+      const response = await axios.get(`https://resumesearchmain.onrender.com/api/comments/user/${id}`);
       const userResumeData = response.data;
       setUserResume(userResumeData);
       console.log(userResumeData);
