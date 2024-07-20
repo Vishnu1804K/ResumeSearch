@@ -13,7 +13,7 @@ function Register() {
   const onFinish = async (values) => {
     try {
       console.log(values);
-      const user = await axios.post("api/user/register", { ...values, captchaInput }); 
+      const user = await axios.post("https://resumesearchmain.onrender.com/api/user/register", { ...values, captchaInput }); 
       console.log(user);
       message.success("Registration successful");
     } catch (error) {
@@ -23,7 +23,7 @@ function Register() {
   };
   
   const captchahandler = async () => {
-    const response = await axios.get("/api/user/captcha");
+    const response = await axios.get("https://resumesearchmain.onrender.com/api/user/captcha");
     setCaptchaValue(response.data);
     setCaptchaInput("");
   };
@@ -31,7 +31,7 @@ function Register() {
     const fetchCaptcha = async () => {
       try {
         console.log("Fetching CAPTCHA...");
-        const response = await axios.get("/api/user/captcha");
+        const response = await axios.get("https://resumesearchmain.onrender.com/api/user/captcha");
         console.log("CAPTCHA response:", response.data);
         setCaptchaValue(response.data);
       } catch (error) {
