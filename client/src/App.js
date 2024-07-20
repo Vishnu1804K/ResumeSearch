@@ -13,7 +13,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/user/users');
+        const response = await axios.get('https://resumesearchmain.onrender.com/api/user/users');
         console.log(response.data);
       } catch (error) {
         console.log(error);
